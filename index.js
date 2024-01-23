@@ -9,6 +9,10 @@ import bodyParser from "body-parser" ;
 
 const app = express () ;
 
+// set up the default template engine
+
+app .set ( "view engine" , "ejs" ) ;
+
 // set the port
 
 const port = 3000 ;
@@ -23,7 +27,7 @@ app .get (
 
 		res .render (
 
-			"todos.ejs"
+			"todos"
 
 		) ;
 
