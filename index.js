@@ -67,6 +67,20 @@ function updateTodo ( req , res , next ) {
 
 }
 
+// configure route to call a specific todo
+
+app .get (
+
+	"/todo/:id" ,
+
+	( req , res ) => {
+
+		res .render ( "todo" ) ;
+
+	}
+
+) ;
+
 // configure the route for posting todos 
 
 app .post (
