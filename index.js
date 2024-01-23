@@ -59,6 +59,98 @@ function updateTodo ( req , res , next ) {
 
 }
 
+// configure middleware to update an entry
+
+function upgradeTodo ( req , res , next ) {
+
+	let todoItem = {
+
+		id : req .body .id ,
+
+		name : req .body .name ,
+
+		about : req .body .about
+
+	} ;
+
+	let specificTodo = todoItem.id ;
+
+	let specificTodoId = 0 ;
+
+	todos .forEach (
+
+			( todo ) => {
+
+				if ( todo .id == todoItem.id ) {
+
+					specificTodoId = todos .indexOf ( todo ) ;
+
+				}
+
+			}
+
+	) ;
+
+	todos .splice (specificTodoId, 1, todoItem ) ;
+
+	next () ;
+
+}
+
+// configure edit post route
+
+app .post (
+
+	"/edit/save" ,
+
+	upgradeTodo ,
+
+	( req , res ) => {
+
+		res .redirect ( "/" ) ;
+
+	}
+
+)
+
+// configure the edit route
+
+app .get (
+
+	"/edit/:id" ,
+
+	( req , res ) => {
+
+		let editTodo = req .params .id ;
+
+		let getEditTodo = {} ;
+
+		todos .forEach (
+
+			( todo ) => {
+
+				if ( todo .id == editTodo ) {
+
+					getEditTodo = todo ;
+
+				}
+
+			}
+
+		) ;
+
+		res .render (
+
+			"editTodo" ,
+
+			{ getEditTodo }
+
+		) ;
+
+	}
+
+)
+
 // configure the route to delete a specific todo
 
 app .get (
