@@ -37,27 +37,33 @@
         
         <ol>
           
-          <li>
+          <% todos .forEach ( function ( todo ) { %>
+
+            <li>
             
-            <a href = "" >
+              <a href = "" >
         
-              Go to the gym
+                <%= todo .name %>
 
-            </a>
+              </a>
 
-            <a href = "" >
+              <a href = "" >
         
-              More
+                More
 
-            </a>
+              </a>
 
-            <a href = "" >
+              <a href = "" >
         
-              Discard
+                Discard
 
-            </a>
+              </a>
 
-          </li>
+            </li>
+
+          <% } ) ; %>
+
+          
 
         </ol>
 

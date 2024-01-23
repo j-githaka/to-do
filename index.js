@@ -98,7 +98,7 @@ app .get (
 
 		res .render (
 
-			"addTodo"
+			"addTodo" ,
 
 		) ;
 
@@ -116,7 +116,9 @@ app .get (
 
 		res .render (
 
-			"todos"
+			"todos" ,
+
+			{ todos : todos }
 
 		) ;
 
