@@ -101,7 +101,31 @@ app .get (
 
 	( req , res ) => {
 
-		res .render ( "todo" ) ;
+		let openTodo = req .params .id ;
+
+		let getTodo = {} ;
+
+		todos .forEach (
+
+			( todo ) => {
+
+				if ( todo .id == openTodo ) {
+
+					getTodo = todo ;
+
+				}
+
+			}
+
+		) ;
+
+		res .render (
+
+			"todo" ,
+
+			{ getTodo }
+
+		) ;
 
 	}
 
