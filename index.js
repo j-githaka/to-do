@@ -46,7 +46,49 @@ let todos = [
 
 ] ;
 
-// configure the link to addTodo page
+
+// configure middleware to create an entry
+
+function updateTodo ( req , res , next ) {
+
+	let todoItem = {
+
+		id : todoID () ,
+
+		name : req .body .name ,
+
+		about : req .body .about
+
+	} ;
+
+	todos .push ( todoItem ) ;
+
+	next () ;
+
+}
+
+// configure the route for posting todos 
+
+app .post (
+
+	"/createTodo" ,
+
+	updateTodo ,
+
+	( req , res ) => {
+
+		res .redirect (
+
+			"/"
+
+		) ;
+
+	}
+
+) ;
+
+
+// configure the route to addTodo page
 
 app .get (
 
