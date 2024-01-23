@@ -15,6 +15,18 @@ const app = express () ;
 
 app .set ( "view engine" , "ejs" ) ;
 
+// setup the body-parser middleware for use in forms
+
+app .use ( bodyParser .urlencoded ( { extended : false } ) ) ;
+
+// create custom middleware for updating todos
+
+function updateTodos ( req , res , next ) {
+
+	// 
+
+}
+
 // set the port
 
 const port = 3000 ;
@@ -34,7 +46,23 @@ let todos = [
 
 ] ;
 
-console .log ( todos ) ;
+// configure the link to addTodo page
+
+app .get (
+
+	"/addTodo" ,
+
+	( req , res ) => {
+
+		res .render (
+
+			"addTodo"
+
+		) ;
+
+	}
+
+) ;
 
 // configure the todos page/homepage
 
