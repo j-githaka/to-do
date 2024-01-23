@@ -13,6 +13,24 @@ const app = express () ;
 
 const port = 3000 ;
 
+// configure the todos page/homepage
+
+app .get (
+
+	"/" ,
+
+	( req , res ) => {
+
+		res .render (
+
+			"todos.ejs"
+
+		) ;
+
+	}
+
+) ;
+
 // configure application server 
 
 app .listen (
