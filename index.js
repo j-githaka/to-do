@@ -19,14 +19,6 @@ app .set ( "view engine" , "ejs" ) ;
 
 app .use ( bodyParser .urlencoded ( { extended : false } ) ) ;
 
-// create custom middleware for updating todos
-
-function updateTodos ( req , res , next ) {
-
-	// 
-
-}
-
 // set the port
 
 const port = 3000 ;
@@ -66,6 +58,40 @@ function updateTodo ( req , res , next ) {
 	next () ;
 
 }
+
+// configure the route to delete a specific todo
+
+app .get (
+
+	"/delete/:id" ,
+
+	( req , res ) => {
+
+		let targetTodo = req .params .id ;
+
+		let targetId = 0 ;
+
+		todos .forEach (
+
+			( todo ) => {
+
+				if ( todo .id == targetTodo ) {
+
+					targetId = todos .indexOf ( todo ) ;
+
+				} 
+
+			}
+
+		) ;
+
+		todos .splice ( targetId , 1 ) ;
+
+		res .redirect ( "/" ) ;
+
+	}
+
+) ;
 
 // configure route to call a specific todo
 
