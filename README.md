@@ -2,6 +2,28 @@
 
 A functional to-do app running without a database. Featuring NodeJS runtime, its a creative milestone for my web design career.
 
+# usage
+
+Step 1 clone the repository
+
+`git clone https://github.com/j-githaka/to-do.git`
+
+Step 2 go to the to-do app directory
+
+`cd to-do`
+
+Step 3 install all necessary dependencies
+
+`npm i`
+
+step 4 run the app
+
+`node index.js`
+
+or if you have nodemon configured
+
+`nodemon index.js` 
+
 # pages
 
 ## todo page 
