@@ -1,21 +1,5 @@
 
-<!DOCTYPE html>
-
-<html lang = "en" >
-
-  <head>
-
-    <meta charset = "UTF-8" >
-
-    <meta name = "viewport" content = "width=device-width , initial-scale=1.0" >
-
-    <title>
-
-      Add ToDo
-
-    </title>
-
-  </head>
+<%- include ( 'header' ) ; -%>
 
   <body>
 
@@ -30,18 +14,30 @@
       <div class = "addToDo" >
         
         <form action = "/createTodo" method = "POST" >
+
+          <label>
+              
+              Title
+
+          </label>
           
           <input type = "text" name = "name" >
 
+          <label>
+              
+              Content
+
+          </label>
+
           <textarea name = "about" ></textarea>
 
-          <input type = "submit" value = "Submit" >
+          <input class = "createBtn" type = "submit" value = "Create ToDo" >
 
         </form>
 
-        <a href = "" >
+        <a class = "addBtn" href = "/" >
           
-          Back To ToDos!
+          Back
 
         </a>
 
@@ -51,4 +47,4 @@
 
   </body>
 
-</html>
+<%- include ( 'footer' ) ; -%>

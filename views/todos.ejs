@@ -1,21 +1,5 @@
 
-<!DOCTYPE html>
-
-<html lang = "en" >
-
-  <head>
-
-    <meta charset = "UTF-8" >
-
-    <meta name = "viewport" content = "width=device-width , initial-scale=1.0" >
-
-    <title>
-
-      ToDos
-
-    </title>
-
-  </head>
+<%- include ( 'header' ) ; -%>
 
   <body>
 
@@ -23,13 +7,13 @@
       
       <h1 class = "title" >
         
-        ToDos
+        Things To Do
 
       </h1>
 
-      <a href = "/addTodo" >
+      <a class = "addBtn" href = "/addTodo" >
         
-        Add ToDo
+        +Add
 
       </a>
 
@@ -41,27 +25,27 @@
 
             <li>
             
-              <a href = "/todo/<%= todo .id %>" >
+              <a class = "name light " >
         
                 <%= todo .name %>
 
               </a>
 
-              <a href = "/todo/<%= todo .id %>" >
+              <a class = "light" href = "/todo/<%= todo .id %>" >
         
-                More
+                <img src="link.svg">
 
               </a>
 
-              <a href = "/edit/<%= todo .id %>" >
+              <a class = "light" href = "/edit/<%= todo .id %>" >
         
-                Edit
+                <img src="edit.svg">
 
               </a>
 
-              <a href = "/delete/<%= todo .id %>" >
+              <a class = "light" href = "/delete/<%= todo .id %>" >
         
-                Discard
+                <img src="delete.svg">
 
               </a>
 
@@ -79,4 +63,4 @@
 
   </body>
 
-</html>
+<%- include ( 'footer' ) ; -%>

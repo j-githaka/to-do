@@ -19,6 +19,10 @@ app .set ( "view engine" , "ejs" ) ;
 
 app .use ( bodyParser .urlencoded ( { extended : false } ) ) ;
 
+// setup static files
+
+app .use ( express .static ( 'public' ) ) ;
+
 // set the port
 
 const port = 3000 ;

@@ -1,21 +1,5 @@
 
-<!DOCTYPE html>
-
-<html lang = "en" >
-
-  <head>
-
-    <meta charset = "UTF-8" >
-
-    <meta name = "viewport" content = "width=device-width , initial-scale=1.0" >
-
-    <title>
-
-      ToDo
-
-    </title>
-
-  </head>
+<%- include ( 'header' ) ; -%>
 
   <body>
 
@@ -27,17 +11,17 @@
 
       </h1>
 
-      <div class = "todo" >
+      <div class = "view" >
         
-        <p>
+        <p class = "todo" >
           
           <%= getTodo.about %>
 
         </p>
 
-        <a href = "/" >
+        <a class = "addBtn" href = "/" >
         
-          Back To ToDos
+          Back
 
         </a>
 
@@ -47,4 +31,4 @@
 
   </body>
 
-</html>
+<%- include ( 'footer' ) ; -%>
