@@ -22,7 +22,7 @@ A functional to-do app running without a database. Featuring NodeJS runtime, its
 
 # more info
 
-The app comes with a default todo entry you can always customize it on the index.js file.
+The app comes with a default todo entry you can always customize on the index.js file.
 
 ```javascript
 
